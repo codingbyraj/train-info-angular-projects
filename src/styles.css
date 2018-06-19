@@ -1,14 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-.left {
-    float: left;
-  }
-  
-  .right {
-    float: right;
-  }
-  
-  .clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+body{
+    margin-bottom:10%;    
+    overflow-x: hidden;
+}

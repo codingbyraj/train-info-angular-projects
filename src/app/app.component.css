@@ -1,90 +1,57 @@
-h1 {
-  text-align: center;
+.app-title{
+    height: 60px;
+    /* border: 1px solid red; */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;    
+    z-index: 1;
+    box-shadow: 0px 0px 10px grey;
+    background: #1b7477;
+}
+h1{
+    text-align: center;    
+    margin: 0;
+    padding: 10px;
+    color: white;
+    position: absolute;
+    top: 13px;
+    left: 0;
+    width: 100%;
+    z-index: 12;
+    text-shadow: 4px -4px 5px black;
+    font-size: 40px;
+}
+.running-train img{
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    z-index: 3;
+    right: -10%;
+    top: 13px;
+    animation: runtrain 17s infinite linear;
 }
 
-.print-todos {
-  padding-top: 3%;
-  max-width: 70%;
-  margin: auto;
-  /* pos ition: relative; */
+@keyframes runtrain{
+    from{
+        right: -5%;
+    }
+    to{
+        right: 150%;
+    }
+    
 }
 
-.print-todos li {
-  border: 1px solid grey;
-  border-top: none;
-  list-style: none;
-  padding: 6px 0;
-  font-weight: bold;
-  /* position: absolute; */
+#content{
+    position: relative;
 }
 
-.heading {
-  background: silver;
-  border: 1px solid !important;
+.menu{
+    position: fixed;
+    top: 59px;    
+    width: 100%;    
+    z-index: 1000;
 }
-
-.heading span {
-  /* padding: 6px 0; */
-}
-
-.print-todos .heading span:first-child {
-  display: inline-block;
-  width: 50%;
-  border-right: 1px solid;
-}
-
-.print-todos .heading span:nth-child(2) {
-  display: inline-block;
-  width: 20%;
-  border-right: 1px solid;
-}
-
-.print-todos .heading span:last-child {
-  display: inline-block;
-  width: 29%;
-}
-
-.print-todos li span {
-  text-align: center;
-}
-
-.todo-desc {
-  display: inline-block;
-  width: 50%;
-  /* border-right: 1px solid; */
-}
-
-.todo-staus {
-  display: inline-block;
-  width: 19%;
-}
-
-.todo-update-delete {
-  display: inline-block;
-  width: 29%;
-  /* border-left: 1px solid; */
-}
-
-.todo-staus span {
-  border: 1px solid;
-  margin: 0 5px;
-}
-
-.todo-update-delete span {
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-/*  */
-
-li.task-done {
-  background: #35CE8D;
-  color: whitesmoke;
-}
-
-span.task-done {
-  text-decoration-line: line-through;
-}
-task-txtbox{
-  text-align: center;  
+.navbar{
+    border-radius: 0px !important;
 }

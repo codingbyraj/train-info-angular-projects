@@ -1,27 +1,50 @@
-<h1>Todo Application</h1>
-<app-todo [todos]='todos' (result)="updateAfterAddTodo($event)"></app-todo>
-
-<ul class="print-todos" *ngIf="todos.length">
-  <li class="heading clearfix">
-    <span class="left">Task</span>
-    <span class="left">Toggle Status</span>
-    <span class="right">Update/Delete</span>
-  </li>
-  <li *ngFor="let todo of todos" [class.task-done]="todo.status">
-    <task-txtbox [task]="todo" (updateParentTask)= "updatedTaskByChild($event)" *ngIf="todo.isEditable"></task-txtbox>
-    <span class="todo-desc" [class.task-done]="todo.status" *ngIf="!todo.isEditable" (click)="makeEditable(todo.id)">
-      {{todo.data}}
-    </span>
-    <span class="todo-staus">
-      <input type="checkbox" [(ngModel)]="todo.status">
-    </span>
-    <span class="todo-update-delete">
-      <span class="edit">
-        <i class="fas fa-pencil-alt" (click)="makeEditable(todo.id)"></i>        
-      </span>      
-      <span class="delete">
-        <i class="far fa-trash-alt" (click)="deleteTodo(todo.id)"></i>
-      </span>
-    </span>
-  </li>
-</ul>
+<div id="content">
+  <div class="app-title">
+      <h1>Train's Info</h1>  
+  <div class="running-train">
+    <img src="./assets/images/running-train-1.png" alt="running train">
+  </div>  
+</div>
+  <!-- menu starts -->
+  <div class="show-hide-menu">  
+    <div class="menu">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" routerLink="livestatus">Train's Info</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a routerLink="livestatus">Live Status</a>
+            </li>
+            <li>
+              <a routerLink="pnrstatus">PNR Status</a>
+            </li>
+            <li>
+              <a routerLink="trainroute">Train Route</a>
+            </li>
+            <li>
+              <a routerLink="seatavailable">Seat Availability</a>
+            </li>
+            <li>
+              <a routerLink="trainfare">Get Fare</a>
+            </li>
+            <li>
+              <a routerLink="trainsbetweenstations">Trains Between Stations</a>
+            </li>            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- menu ends -->
+  
+  <!-- body section -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
